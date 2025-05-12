@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using System.Collections;
@@ -16,7 +16,7 @@ public class DiyalogYoneticisi : MonoBehaviour
     public TextMeshProUGUI sanikAdiText;
     public Button sanikDevamEtButon;
 
-    public Image sanikGorselBaslangic; // Dava baþlar baþlamaz görünen sanýk görseli (panel dýþýnda)
+    public Image sanikGorselBaslangic; // Dava baï¿½lar baï¿½lamaz gï¿½rï¿½nen sanï¿½k gï¿½rseli (panel dï¿½ï¿½ï¿½nda)
     public Button mikrofonButon;
 
     public float harfHiz = 0.05f;
@@ -27,42 +27,42 @@ public class DiyalogYoneticisi : MonoBehaviour
 
     void Start()
     {
-        // Panelleri baþlangýçta kapat
+        // Panelleri baï¿½langï¿½ï¿½ta kapat
         if (hakimKonusmaPanel != null) hakimKonusmaPanel.SetActive(false);
         if (sanikKonusmaPanel != null) sanikKonusmaPanel.SetActive(false);
 
-        // Baþlangýç sanýk görselini aktif et (Inspector'da atanmýþ olmalý)
+        // Baï¿½langï¿½ï¿½ sanï¿½k gï¿½rselini aktif et (Inspector'da atanmï¿½ï¿½ olmalï¿½)
         if (sanikGorselBaslangic != null) sanikGorselBaslangic.gameObject.SetActive(true);
 
-        // Mikrofon butonuna týklama olayýný baðla
+        // Mikrofon butonuna tï¿½klama olayï¿½nï¿½ baï¿½la
         if (mikrofonButon != null)
         {
             mikrofonButon.onClick.AddListener(IlkKonusmayiBaslat);
         }
         else
         {
-            Debug.LogError("Mikrofon Butonu Inspector'da atanmamýþ!");
+            Debug.LogError("Mikrofon Butonu Inspector'da atanmamï¿½ï¿½!");
         }
 
-        // Devam et butonlarýnýn olaylarýný baðla
+        // Devam et butonlarï¿½nï¿½n olaylarï¿½nï¿½ baï¿½la
         if (hakimDevamEtButon != null) hakimDevamEtButon.onClick.AddListener(SonrakiMetniGoster);
         if (sanikDevamEtButon != null) sanikDevamEtButon.onClick.AddListener(SonrakiMetniGoster);
 
-        // Diyalog metinleri kontrolü
+        // Diyalog metinleri kontrolï¿½
         if (diyalogMetinleri == null || diyalogMetinleri.Count == 0)
         {
-            Debug.LogError("Diyalog Metinleri Inspector'da atanmamýþ veya boþ!");
+            Debug.LogError("Diyalog Metinleri Inspector'da atanmamï¿½ï¿½ veya boï¿½!");
         }
     }
 
     void IlkKonusmayiBaslat()
     {
-        Debug.Log("Ýlk konuþma baþlatýlýyor.");
+        Debug.Log("ï¿½lk konuï¿½ma baï¿½latï¿½lï¿½yor.");
         if (mikrofonButon != null)
         {
             mikrofonButon.interactable = false;
         }
-        // Ýlk diyalog baþladýðýnda baþlangýç sanýk görselini gizle (isteðe baðlý)
+        // ï¿½lk diyalog baï¿½ladï¿½ï¿½ï¿½nda baï¿½langï¿½ï¿½ sanï¿½k gï¿½rselini gizle (isteï¿½e baï¿½lï¿½)
         // if (sanikGorselBaslangic != null) sanikGorselBaslangic.gameObject.SetActive(false);
         mevcutMetinIndex = 0;
         MevcutMetniGoster();
@@ -95,14 +95,14 @@ public class DiyalogYoneticisi : MonoBehaviour
         if (hakimKonusmaPanel != null) hakimKonusmaPanel.SetActive(false);
         if (sanikKonusmaPanel != null) sanikKonusmaPanel.SetActive(false);
 
-        // Konuþmacýya göre paneli aktif et ve metni göster
+        // Konuï¿½macï¿½ya gï¿½re paneli aktif et ve metni gï¿½ster
         if (mevcutKonusma.konusmaciAdi == "Hakim")
         {
             if (hakimKonusmaPanel != null) hakimKonusmaPanel.SetActive(true);
             if (hakimAdiText != null) hakimAdiText.text = mevcutKonusma.konusmaciAdi;
             if (hakimMetinText != null) mevcutMetinAnimasyonu = StartCoroutine(MetniHarfHarfGoster(hakimMetinText, mevcutKonusma.metin));
         }
-        else if (mevcutKonusma.konusmaciAdi == "Sanýk")
+        else if (mevcutKonusma.konusmaciAdi == "SanÄ±k")
         {
             if (sanikKonusmaPanel != null) sanikKonusmaPanel.SetActive(true);
             if (sanikAdiText != null) sanikAdiText.text = mevcutKonusma.konusmaciAdi;
@@ -110,10 +110,10 @@ public class DiyalogYoneticisi : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Bilinmeyen konuþmacý: " + mevcutKonusma.konusmaciAdi);
+            Debug.LogError("Bilinmeyen konuï¿½macï¿½: " + mevcutKonusma.konusmaciAdi);
         }
 
-        // Devam et butonlarýný inaktif yap
+        // Devam et butonlarï¿½nï¿½ inaktif yap
         if (hakimDevamEtButon != null) hakimDevamEtButon.interactable = false;
         if (sanikDevamEtButon != null) sanikDevamEtButon.interactable = false;
     }
@@ -129,7 +129,7 @@ public class DiyalogYoneticisi : MonoBehaviour
             yield return new WaitForSeconds(harfHiz);
         }
 
-        // Animasyon bittikten sonra doðru devam et butonunu aktif et
+        // Animasyon bittikten sonra doï¿½ru devam et butonunu aktif et
         if (metinAlani == hakimMetinText && hakimDevamEtButon != null && hakimKonusmaPanel.activeSelf)
         {
             hakimDevamEtButon.interactable = true;
@@ -145,7 +145,7 @@ public class DiyalogYoneticisi : MonoBehaviour
         Debug.Log("Diyalog sona erdi.");
         if (hakimKonusmaPanel != null) hakimKonusmaPanel.SetActive(false);
         if (sanikKonusmaPanel != null) sanikKonusmaPanel.SetActive(false);
-        // Diyalog bittikten sonra baþlangýç sanýk görselini tekrar görünür yapabiliriz (isteðe baðlý)
+        // Diyalog bittikten sonra baï¿½langï¿½ï¿½ sanï¿½k gï¿½rselini tekrar gï¿½rï¿½nï¿½r yapabiliriz (isteï¿½e baï¿½lï¿½)
         if (sanikGorselBaslangic != null) sanikGorselBaslangic.gameObject.SetActive(true);
         if (mikrofonButon != null) mikrofonButon.interactable = true;
         mevcutMetinIndex = 0;
