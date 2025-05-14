@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e71514a85a88604c84e01428c2a4ba9, type: 3}
+  m_Name: SAvukat1.2
+  m_EditorClassIdentifier: 
+  metin: "... m\xFCvekkilimin beraatine yada davan\u0131n mahkeme taraf\u0131nda
+    d\xFC\u015F\xFCr\xFClmesini talep ediyorum."
+  konusmaciAdi: " Avukat Ali Kemal G\xFCren"
+  konusmaciPortresi: {fileID: 0}

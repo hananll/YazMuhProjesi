@@ -11,7 +11,7 @@ public class SavciKonusma : MonoBehaviour
     public TextMeshProUGUI savciAdiText;
     public Button savciKapatButon;
     public Button savciButon;
-    public Button savciDevamEtButon; // Yeni: Devam Et butonu
+    public Button savciDevamEtButon; 
 
     public float harfHiz = 0.05f;
 
@@ -65,11 +65,12 @@ public class SavciKonusma : MonoBehaviour
     void KonusmayiBaslat()
     {
         Debug.Log("Savcý konuþmasý baþlatýlýyor.");
+       /*
         if (savciButon != null)
         {
             savciButon.interactable = false; // Baþlangýç butonunu devre dýþý býrak
         }
-
+       */
         if (savciKonusmaPanel != null && savciDiyalogMetinleri != null && savciDiyalogMetinleri.Count > 0)
         {
             savciKonusmaPanel.SetActive(true);

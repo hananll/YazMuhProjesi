@@ -16,7 +16,7 @@ public class DiyalogYoneticisi : MonoBehaviour
     public TextMeshProUGUI sanikAdiText;
     public Button sanikDevamEtButon;
 
-    public Image sanikGorselBaslangic; // Dava ba�lar ba�lamaz g�r�nen san�k g�rseli (panel d���nda)
+    public Image sanikGorselBaslangic; 
     public Button mikrofonButon;
 
     public float harfHiz = 0.05f;
@@ -27,23 +27,16 @@ public class DiyalogYoneticisi : MonoBehaviour
 
     void Start()
     {
-        // Panelleri ba�lang��ta kapat
-        if (hakimKonusmaPanel != null) hakimKonusmaPanel.SetActive(false);
-        if (sanikKonusmaPanel != null) sanikKonusmaPanel.SetActive(false);
 
-        // Ba�lang�� san�k g�rselini aktif et (Inspector'da atanm�� olmal�)
-        if (sanikGorselBaslangic != null) sanikGorselBaslangic.gameObject.SetActive(true);
+       hakimKonusmaPanel.SetActive(false);
+       sanikKonusmaPanel.SetActive(false);
+       sanikGorselBaslangic.gameObject.SetActive(true);
+       
+       
 
-        // Mikrofon butonuna t�klama olay�n� ba�la
-        if (mikrofonButon != null)
-        {
-            mikrofonButon.onClick.AddListener(IlkKonusmayiBaslat);
-        }
-        else
-        {
-            Debug.LogError("Mikrofon Butonu Inspector'da atanmam��!");
-        }
-
+       mikrofonButon.onClick.AddListener(IlkKonusmayiBaslat);
+        
+        
         // Devam et butonlar�n�n olaylar�n� ba�la
         if (hakimDevamEtButon != null) hakimDevamEtButon.onClick.AddListener(SonrakiMetniGoster);
         if (sanikDevamEtButon != null) sanikDevamEtButon.onClick.AddListener(SonrakiMetniGoster);
@@ -57,15 +50,11 @@ public class DiyalogYoneticisi : MonoBehaviour
 
     void IlkKonusmayiBaslat()
     {
-        Debug.Log("�lk konu�ma ba�lat�l�yor.");
-        if (mikrofonButon != null)
-        {
-            mikrofonButon.interactable = false;
-        }
-        // �lk diyalog ba�lad���nda ba�lang�� san�k g�rselini gizle (iste�e ba�l�)
-        // if (sanikGorselBaslangic != null) sanikGorselBaslangic.gameObject.SetActive(false);
+     
+        mikrofonButon.interactable = false;
         mevcutMetinIndex = 0;
         MevcutMetniGoster();
+
     }
 
     void SonrakiMetniGoster()
@@ -88,12 +77,14 @@ public class DiyalogYoneticisi : MonoBehaviour
             DiyaloguBitir();
             return;
         }
+        
 
         KonusmaMetniData mevcutKonusma = diyalogMetinleri[mevcutMetinIndex];
 
-        // Panelleri kapat
-        if (hakimKonusmaPanel != null) hakimKonusmaPanel.SetActive(false);
-        if (sanikKonusmaPanel != null) sanikKonusmaPanel.SetActive(false);
+
+        hakimKonusmaPanel.SetActive(false);
+        sanikKonusmaPanel.SetActive(false);
+        //Sanığın veya Hakimin Konuşması bittikten sonra panelinin açık kalmaması için yazıldı.
 
         // Konu�mac�ya g�re paneli aktif et ve metni g�ster
         if (mevcutKonusma.konusmaciAdi == "Hakim")
@@ -142,12 +133,13 @@ public class DiyalogYoneticisi : MonoBehaviour
 
     void DiyaloguBitir()
     {
-        Debug.Log("Diyalog sona erdi.");
-        if (hakimKonusmaPanel != null) hakimKonusmaPanel.SetActive(false);
-        if (sanikKonusmaPanel != null) sanikKonusmaPanel.SetActive(false);
-        // Diyalog bittikten sonra ba�lang�� san�k g�rselini tekrar g�r�n�r yapabiliriz (iste�e ba�l�)
-        if (sanikGorselBaslangic != null) sanikGorselBaslangic.gameObject.SetActive(true);
-        if (mikrofonButon != null) mikrofonButon.interactable = true;
+        
+        hakimKonusmaPanel.SetActive(false);
+        sanikKonusmaPanel.SetActive(false); 
+        sanikGorselBaslangic.gameObject.SetActive(true);
+
+        mikrofonButon.interactable = true;
         mevcutMetinIndex = 0;
+
     }
 }
