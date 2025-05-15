@@ -4,7 +4,7 @@ using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 
-public class DiyalogYoneticisi : MonoBehaviour
+public class SanikveHakimKonusma : MonoBehaviour
 {
     public GameObject hakimKonusmaPanel;
     public TextMeshProUGUI hakimMetinText;
@@ -25,6 +25,9 @@ public class DiyalogYoneticisi : MonoBehaviour
     private int mevcutMetinIndex = 0;
     private Coroutine mevcutMetinAnimasyonu;
 
+   public SavciKonusma savciKonusma;
+   public SanıkAvukatıKonusma sanıkAvukatıKonusma;
+
     void Start()
     {
 
@@ -32,6 +35,7 @@ public class DiyalogYoneticisi : MonoBehaviour
        sanikKonusmaPanel.SetActive(false);
        sanikGorselBaslangic.gameObject.SetActive(true);
        
+
        
 
        mikrofonButon.onClick.AddListener(IlkKonusmayiBaslat);
@@ -46,12 +50,19 @@ public class DiyalogYoneticisi : MonoBehaviour
         {
             Debug.LogError("Diyalog Metinleri Inspector'da atanmam�� veya bo�!");
         }
+
+        savciKonusma.savciButon.interactable = true;
+        sanıkAvukatıKonusma.sanikAvukatiButon.interactable = true;  
+        
     }
 
     void IlkKonusmayiBaslat()
     {
      
         mikrofonButon.interactable = false;
+        savciKonusma.savciButon.interactable = false;
+        sanıkAvukatıKonusma.sanikAvukatiButon.interactable = false;
+
         mevcutMetinIndex = 0;
         MevcutMetniGoster();
 
@@ -139,6 +150,12 @@ public class DiyalogYoneticisi : MonoBehaviour
         sanikGorselBaslangic.gameObject.SetActive(true);
 
         mikrofonButon.interactable = true;
+
+        savciKonusma.savciButon.interactable = true;
+        sanıkAvukatıKonusma.sanikAvukatiButon.interactable = true;
+
+
+       
         mevcutMetinIndex = 0;
 
     }

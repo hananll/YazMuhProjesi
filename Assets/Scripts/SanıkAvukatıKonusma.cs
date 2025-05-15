@@ -23,8 +23,13 @@ public class SanıkAvukatıKonusma : MonoBehaviour
     private int mevcutMetinIndex = 0;
     private Coroutine mevcutMetinAnimasyonu;
 
-    private void Start()
+    public SanikveHakimKonusma sanikveHakimKonusma;
+    public SavciKonusma savciKonusma;
+    void Start()
     {
+
+        sanikveHakimKonusma.mikrofonButon.interactable = true;
+        savciKonusma.savciButon.interactable = true;
 
         sanikAvukatiKonusmaPanel.SetActive(false);
 
@@ -39,6 +44,11 @@ public class SanıkAvukatıKonusma : MonoBehaviour
             if (sanikAvukatiDiyalogMetinleri.Count > 0)
             {
                 sanikAvukatiKonusmaPanel.SetActive(true);
+
+                sanikveHakimKonusma.mikrofonButon.interactable =false;
+                savciKonusma.savciButon.interactable = false;
+
+
                 mevcutMetinIndex = 0;
                 MevcutMetniGoster();
 
@@ -77,6 +87,11 @@ public class SanıkAvukatıKonusma : MonoBehaviour
             }
 
         }
+
+        sanikveHakimKonusma.mikrofonButon.interactable = true;
+        savciKonusma.savciButon.interactable = true;
+
+        
     }
 
 
@@ -97,6 +112,8 @@ public class SanıkAvukatıKonusma : MonoBehaviour
       void KonusmayiBitir()
       {
         sanikAvukatiKonusmaPanel.SetActive(false);
+        sanikveHakimKonusma.mikrofonButon.interactable = true;
+        savciKonusma.savciButon.interactable = true;
         sanikAvukatiButon.interactable = true;
         mevcutMetinIndex = 0;
 

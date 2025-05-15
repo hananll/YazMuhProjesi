@@ -19,6 +19,9 @@ public class SavciKonusma : MonoBehaviour
     private int mevcutMetinIndex = 0;
     private Coroutine mevcutMetinAnimasyonu;
 
+    public SanýkAvukatýKonusma sanýkAvukatýKonusma;
+    public SanikveHakimKonusma sanikveHakimKonusma;
+
     void Start()
     {
         // Savcý Paneli Baþlangýçta Kapalý Olacak
@@ -60,6 +63,9 @@ public class SavciKonusma : MonoBehaviour
         {
             Debug.LogError("Savcý Diyalog Metinleri (Scriptable Object Listesi) Inspector'da atanmamýþ veya boþ!");
         }
+
+        sanikveHakimKonusma.mikrofonButon.interactable = true;
+        sanýkAvukatýKonusma.sanikAvukatiButon.interactable = true;
     }
 
     void KonusmayiBaslat()
@@ -81,6 +87,9 @@ public class SavciKonusma : MonoBehaviour
         {
             Debug.LogError("Savcý konuþmasý baþlatýlamadý!");
         }
+
+        sanikveHakimKonusma.mikrofonButon.interactable = false;
+        sanýkAvukatýKonusma.sanikAvukatiButon.interactable = false;
     }
 
     void SonrakiMetniGoster()
@@ -136,6 +145,10 @@ public class SavciKonusma : MonoBehaviour
         {
             savciButon.interactable = true; // Baþlangýç butonunu tekrar aktif et (isteðe baðlý)
         }
+
+        sanikveHakimKonusma.mikrofonButon.interactable = true;
+        sanýkAvukatýKonusma.sanikAvukatiButon.interactable = true;
+
         mevcutMetinIndex = 0; // Konuþma tekrar baþlatýlýrsa indeksi sýfýrla
     }
 }
