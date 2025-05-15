@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 13060588}
   - component: {fileID: 13060590}
   - component: {fileID: 13060589}
+  - component: {fileID: 13060591}
   m_Layer: 5
   m_Name: MahkemeSalonu
   m_TagString: Untagged
@@ -197,6 +198,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 13060587}
   m_CullTransparentMesh: 1
+--- !u!95 &13060591
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 13060587}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8631dbaf5c877bd479dd2b029f6c4030, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &23216863
 GameObject:
   m_ObjectHideFlags: 0
@@ -2833,6 +2855,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b8c6f4080ecdd44dbfe039acb462e0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sanikAnimasyonKontrolu: {fileID: 1797381301}
   hakimKonusmaPanel: {fileID: 553097378}
   hakimMetinText: {fileID: 2043024060}
   hakimAdiText: {fileID: 171369773}
@@ -6138,7 +6161,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ff3792ec9a7bc054bae954008706624e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 06b9409cef778f74fbee2cae446ddbff, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6173,8 +6196,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -254.3886, y: -344}
-  m_SizeDelta: {x: 168.4525, y: 91.814}
+  m_AnchoredPosition: {x: -242, y: -358}
+  m_SizeDelta: {x: 156.2471, y: 91.951}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1302026820
 GameObject:
@@ -9099,6 +9122,8 @@ GameObject:
   - component: {fileID: 1797381298}
   - component: {fileID: 1797381300}
   - component: {fileID: 1797381299}
+  - component: {fileID: 1797381302}
+  - component: {fileID: 1797381301}
   m_Layer: 5
   m_Name: "San\u0131kPortre"
   m_TagString: Untagged
@@ -9163,6 +9188,39 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1797381297}
   m_CullTransparentMesh: 1
+--- !u!114 &1797381301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1797381297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d9684f69ba42ed40848538f409d0789, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!95 &1797381302
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1797381297}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5e88066c41a93214da4a1429cd7087af, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1802632655
 GameObject:
   m_ObjectHideFlags: 0

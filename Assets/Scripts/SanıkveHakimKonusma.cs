@@ -6,6 +6,8 @@ using System.Collections.Generic;
 
 public class SanikveHakimKonusma : MonoBehaviour
 {
+    public KarakterKonusmaAnimasyonu sanikAnimasyonKontrolu;
+
     public GameObject hakimKonusmaPanel;
     public TextMeshProUGUI hakimMetinText;
     public TextMeshProUGUI hakimAdiText;
@@ -24,8 +26,9 @@ public class SanikveHakimKonusma : MonoBehaviour
     public List<KonusmaMetniData> diyalogMetinleri;
     private int mevcutMetinIndex = 0;
     private Coroutine mevcutMetinAnimasyonu;
+    private KarakterKonusmaAnimasyonu sonKonusanAnimasyonKontrolu = null;
 
-   public SavciKonusma savciKonusma;
+    public SavciKonusma savciKonusma;
    public SanıkAvukatıKonusma sanıkAvukatıKonusma;
 
     void Start()
@@ -88,7 +91,15 @@ public class SanikveHakimKonusma : MonoBehaviour
             DiyaloguBitir();
             return;
         }
-        
+
+        // --- EKLENDİ: Önceki konuşanın animasyonunu durdur ---
+        if (sonKonusanAnimasyonKontrolu != null)
+        {
+            sonKonusanAnimasyonKontrolu.KonusmayiBitir();
+            sonKonusanAnimasyonKontrolu = null;
+        }
+        // --- EKLENDİ SONU ---
+
 
         KonusmaMetniData mevcutKonusma = diyalogMetinleri[mevcutMetinIndex];
 
@@ -100,12 +111,28 @@ public class SanikveHakimKonusma : MonoBehaviour
         // Konu�mac�ya g�re paneli aktif et ve metni g�ster
         if (mevcutKonusma.konusmaciAdi == "Hakim")
         {
+
+            // if (hakimAnimasyonKontrolu != null) // Eğer hakim için animasyon varsa
+            // {
+            //     hakimAnimasyonKontrolu.KonusmayaBasla();
+            //     sonKonusanAnimasyonKontrolu = hakimAnimasyonKontrolu;
+            // }
+
             if (hakimKonusmaPanel != null) hakimKonusmaPanel.SetActive(true);
             if (hakimAdiText != null) hakimAdiText.text = mevcutKonusma.konusmaciAdi;
             if (hakimMetinText != null) mevcutMetinAnimasyonu = StartCoroutine(MetniHarfHarfGoster(hakimMetinText, mevcutKonusma.metin));
         }
         else if (mevcutKonusma.konusmaciAdi == "Sanık")
         {
+
+            // --- EKLENDİ: Sanık konuşmaya başlayacaksa animasyonunu başlat ---
+            if (sanikAnimasyonKontrolu != null)
+            {
+                sanikAnimasyonKontrolu.KonusmayaBasla();
+                sonKonusanAnimasyonKontrolu = sanikAnimasyonKontrolu; // Sanığı aktif konuşan yap
+            }
+            // --- EKLENDİ SONU ---
+
             if (sanikKonusmaPanel != null) sanikKonusmaPanel.SetActive(true);
             if (sanikAdiText != null) sanikAdiText.text = mevcutKonusma.konusmaciAdi;
             if (sanikMetinText != null) mevcutMetinAnimasyonu = StartCoroutine(MetniHarfHarfGoster(sanikMetinText, mevcutKonusma.metin));
@@ -144,7 +171,15 @@ public class SanikveHakimKonusma : MonoBehaviour
 
     void DiyaloguBitir()
     {
-        
+
+        // --- EKLENDİ: Aktif olan son konuşanın animasyonunu durdur ---
+        if (sonKonusanAnimasyonKontrolu != null)
+        {
+            sonKonusanAnimasyonKontrolu.KonusmayiBitir();
+            sonKonusanAnimasyonKontrolu = null;
+        }
+        // --- EKLENDİ SONU ---
+
         hakimKonusmaPanel.SetActive(false);
         sanikKonusmaPanel.SetActive(false); 
         sanikGorselBaslangic.gameObject.SetActive(true);
