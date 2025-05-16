@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e71514a85a88604c84e01428c2a4ba9, type: 3}
+  m_Name: Magdur1.1
+  m_EditorClassIdentifier: 
+  metin: "Say\u0131n Hakim, e\u015Fim bana yakla\u015F\u0131k 2 y\u0131ld\u0131r
+    \u015Fiddet uyguluyor her seferinde affettim..."
+  konusmaciAdi: "Ma\u011Fdur Elif Y\u0131ld\u0131ray"
+  konusmaciPortresi: {fileID: 0}
