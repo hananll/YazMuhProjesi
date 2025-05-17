@@ -25,11 +25,16 @@ public class SanıkAvukatıKonusma : MonoBehaviour
 
     public SanikveHakimKonusma sanikveHakimKonusma;
     public SavciKonusma savciKonusma;
+    public MagdurKonusma magdurKonusma;
+    public MagdurAvukatiKonusma magdurAvukatiKonusma;
+
     void Start()
     {
 
         sanikveHakimKonusma.mikrofonButon.interactable = true;
         savciKonusma.savciButon.interactable = true;
+        magdurKonusma.magdurButon.interactable = true;
+        magdurAvukatiKonusma.magdurAvukatiButon.interactable = true;
 
         sanikAvukatiKonusmaPanel.SetActive(false);
 
@@ -47,6 +52,8 @@ public class SanıkAvukatıKonusma : MonoBehaviour
 
                 sanikveHakimKonusma.mikrofonButon.interactable =false;
                 savciKonusma.savciButon.interactable = false;
+                magdurKonusma.magdurButon.interactable = false;
+                magdurAvukatiKonusma.magdurAvukatiButon.interactable = false;
 
 
                 mevcutMetinIndex = 0;
@@ -90,8 +97,10 @@ public class SanıkAvukatıKonusma : MonoBehaviour
 
         sanikveHakimKonusma.mikrofonButon.interactable = true;
         savciKonusma.savciButon.interactable = true;
+        magdurKonusma.magdurButon.interactable = true;
+        magdurAvukatiKonusma.magdurAvukatiButon.interactable = true;
 
-        
+
     }
 
 
@@ -112,9 +121,13 @@ public class SanıkAvukatıKonusma : MonoBehaviour
       void KonusmayiBitir()
       {
         sanikAvukatiKonusmaPanel.SetActive(false);
+
         sanikveHakimKonusma.mikrofonButon.interactable = true;
         savciKonusma.savciButon.interactable = true;
         sanikAvukatiButon.interactable = true;
+        magdurKonusma.magdurButon.interactable = true;
+        magdurAvukatiKonusma.magdurAvukatiButon.interactable = true;
+
         mevcutMetinIndex = 0;
 
     }

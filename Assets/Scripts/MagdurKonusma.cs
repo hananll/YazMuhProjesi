@@ -24,6 +24,7 @@ public class MagdurKonusma : MonoBehaviour
     public SanikveHakimKonusma sanikveHakimKonusma;
     public SavciKonusma savciKonusma;
     public SanýkAvukatýKonusma sanýkAvukatýKonusma;
+    public MagdurAvukatiKonusma magdurAvukatiKonusma;
 
     void Start()
     {
@@ -31,6 +32,7 @@ public class MagdurKonusma : MonoBehaviour
         sanikveHakimKonusma.mikrofonButon.interactable = true;
         savciKonusma.savciButon.interactable = true;
         sanýkAvukatýKonusma.sanikAvukatiButon.interactable = true;
+        magdurAvukatiKonusma.magdurAvukatiButon.interactable= true;
 
         magdurKonusmaPanel.SetActive(false);
 
@@ -51,6 +53,8 @@ public class MagdurKonusma : MonoBehaviour
                 sanikveHakimKonusma.mikrofonButon.interactable = false;
                 savciKonusma.savciButon.interactable = false;
                 sanýkAvukatýKonusma.sanikAvukatiButon.interactable = false;
+                magdurAvukatiKonusma.magdurAvukatiButon.interactable = false;
+
 
 
                 mevcutMetinIndex = 0;
@@ -94,11 +98,13 @@ public class MagdurKonusma : MonoBehaviour
              sanikveHakimKonusma.mikrofonButon.interactable = true;
              savciKonusma.savciButon.interactable = true;
              sanýkAvukatýKonusma.sanikAvukatiButon.interactable = true;
+             magdurAvukatiKonusma.magdurAvukatiButon.interactable = true;
+
 
 
     }
 
-         IEnumerator MetniHarfHarfGoster(TextMeshProUGUI metinAlani, string metin)
+    IEnumerator MetniHarfHarfGoster(TextMeshProUGUI metinAlani, string metin)
        {
         int harfSayisi = 0;
         metinAlani.text = "";
@@ -117,6 +123,8 @@ public class MagdurKonusma : MonoBehaviour
         sanikveHakimKonusma.mikrofonButon.interactable = true;
         savciKonusma.savciButon.interactable = true;
         sanýkAvukatýKonusma.sanikAvukatiButon.interactable = true;
+        magdurAvukatiKonusma.magdurAvukatiButon.interactable = true;
+
 
         magdurButon.interactable = true;
         mevcutMetinIndex = 0;

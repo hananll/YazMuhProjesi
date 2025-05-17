@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e71514a85a88604c84e01428c2a4ba9, type: 3}
+  m_Name: MAvukat1.1
+  m_EditorClassIdentifier: 
+  metin: "Say\u0131n,hakim savc\u0131l\u0131\u011F\u0131n delilleri ortadad\u0131r
+    san\u0131k Yunus Emre \u0130pek e\u015Fine \u015Fiddet uygulam\u0131\u015Ft\u0131r,
+    cezaland\u0131r\u0131lmas\u0131n\u0131 talep ediyoruz."
+  konusmaciAdi: "Avukat Ece Y\u0131lmazer"
+  konusmaciPortresi: {fileID: 0}

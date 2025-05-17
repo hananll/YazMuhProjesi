@@ -21,6 +21,8 @@ public class SavciKonusma : MonoBehaviour
 
     public SanýkAvukatýKonusma sanýkAvukatýKonusma;
     public SanikveHakimKonusma sanikveHakimKonusma;
+    public MagdurKonusma magdurKonusma;
+    public MagdurAvukatiKonusma magdurAvukatiKonusma;
 
     void Start()
     {
@@ -66,6 +68,8 @@ public class SavciKonusma : MonoBehaviour
 
         sanikveHakimKonusma.mikrofonButon.interactable = true;
         sanýkAvukatýKonusma.sanikAvukatiButon.interactable = true;
+        magdurKonusma.magdurButon.interactable = true;
+        magdurAvukatiKonusma.magdurAvukatiButon.interactable = true;
     }
 
     void KonusmayiBaslat()
@@ -90,6 +94,8 @@ public class SavciKonusma : MonoBehaviour
 
         sanikveHakimKonusma.mikrofonButon.interactable = false;
         sanýkAvukatýKonusma.sanikAvukatiButon.interactable = false;
+        magdurKonusma.magdurButon.interactable = false;
+        magdurAvukatiKonusma.magdurAvukatiButon.interactable = false;
     }
 
     void SonrakiMetniGoster()
@@ -148,6 +154,8 @@ public class SavciKonusma : MonoBehaviour
 
         sanikveHakimKonusma.mikrofonButon.interactable = true;
         sanýkAvukatýKonusma.sanikAvukatiButon.interactable = true;
+        magdurKonusma.magdurButon.interactable = true;
+        magdurAvukatiKonusma.magdurAvukatiButon.interactable = true;
 
         mevcutMetinIndex = 0; // Konuþma tekrar baþlatýlýrsa indeksi sýfýrla
     }
