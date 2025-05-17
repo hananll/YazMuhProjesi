@@ -28,6 +28,8 @@ public class SanıkAvukatıKonusma : MonoBehaviour
     public MagdurKonusma magdurKonusma;
     public MagdurAvukatiKonusma magdurAvukatiKonusma;
 
+
+
     void Start()
     {
 
