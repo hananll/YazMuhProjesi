@@ -1,29 +1,48 @@
+// Script Adý: ArkaPlanYonetimi.cs
 using UnityEngine;
-// using UnityEngine.UI; // Image component'ine doðrudan sprite atamasý yapmayacaðýmýz için bu satýr artýk gerekmeyebilir.
 
 public class ArkaPlanYonetimi : MonoBehaviour
 {
     [Tooltip("Bulanýklaþtýrýlmýþ arka plan görselini içeren GameObject")]
     public GameObject blurluArkaPlanGameObject;
 
-    void Start()
+    public static ArkaPlanYonetimi Ornek { get; private set; }
+
+    void Awake()
     {
-        if (blurluArkaPlanGameObject == null)
+        Debug.Log("ArkaPlanYonetimi: Awake() ÇALIÞTI.");
+        if (Ornek == null)
         {
-            Debug.LogError("HATA: ArkaPlanYonetimi - 'blurluArkaPlanGameObject' Inspector'da ATANMAMIÞ! Script düzgün çalýþmayacak.");
-            this.enabled = false; // Script'i devre dýþý býrak
+            Ornek = this;
+            Debug.Log("ArkaPlanYonetimi: Ornek (Singleton) ATANDI.");
+        }
+        else if (Ornek != this)
+        {
+            Debug.LogWarning("ArkaPlanYonetimi: Zaten bir örnek var, bu kopya yok ediliyor: " + gameObject.name);
+            Destroy(gameObject);
             return;
         }
 
-        // Baþlangýçta blurlu arka planý gizle (Inspector'dan zaten false yaptýysanýz bu ek bir güvence)
-        blurluArkaPlanGameObject.SetActive(false);
+        if (blurluArkaPlanGameObject == null)
+        {
+            Debug.LogError("HATA (ArkaPlanYonetimi): 'blurluArkaPlanGameObject' Inspector'da ATANMAMIÞ! Script düzgün çalýþmayacak.");
+            this.enabled = false;
+            return;
+        }
+        blurluArkaPlanGameObject.SetActive(false); // Baþlangýçta kesin kapalý
+        Debug.Log("ArkaPlanYonetimi: Blurlu arka plan baþlangýçta de-aktif edildi.");
     }
 
-    // Bu fonksiyon blurlu arka planý gösterir veya gizler
     public void BlurluArkaPlaniAyarla(bool aktifEt)
     {
-        if (!this.enabled || blurluArkaPlanGameObject == null) return; // Script devredýþýysa veya referans yoksa iþlem yapma
+        Debug.Log("ArkaPlanYonetimi: BlurluArkaPlaniAyarla(" + aktifEt + ") ÇAÐRILDI. Obje: " + (blurluArkaPlanGameObject != null ? blurluArkaPlanGameObject.name : "NULL"));
+        if (!this.enabled || blurluArkaPlanGameObject == null)
+        {
+            Debug.LogError("HATA (ArkaPlanYonetimi): BlurluArkaPlaniAyarla çaðrýldý ama script devredýþý veya blurluArkaPlanGameObject NULL.");
+            return;
+        }
 
         blurluArkaPlanGameObject.SetActive(aktifEt);
+        Debug.Log("ArkaPlanYonetimi: " + blurluArkaPlanGameObject.name + " SetActive(" + aktifEt + ") YAPILDI.");
     }
 }

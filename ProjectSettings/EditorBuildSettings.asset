@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MahkemeSalonuScene.unity
     guid: 35316cc665c2b624f83bd8e3291d10dc
+  - enabled: 1
+    path: "Assets/Scenes/HakimOdas\u0131.unity"
+    guid: 5912300f3d4ad5047928a8a1c409f1d9
+  - enabled: 1
+    path: "Assets/Scenes/Biti\u015FEkran\u0131.unity"
+    guid: b47ceafe0adf7bd44af1caaf17ea0281
   m_configObjects: {}
