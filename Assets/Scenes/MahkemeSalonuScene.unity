@@ -2788,7 +2788,7 @@ MonoBehaviour:
   m_text: "Hakimden San\u0131\u011Fa:"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 138085bb1d513464aa26f1430ebba013, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -2027929946800855010, guid: 138085bb1d513464aa26f1430ebba013, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6729,7 +6729,7 @@ MonoBehaviour:
   m_text: New Text
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 138085bb1d513464aa26f1430ebba013, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -2027929946800855010, guid: 138085bb1d513464aa26f1430ebba013, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7940,7 +7940,7 @@ MonoBehaviour:
   m_text: "San\u0131ktan Hakime:"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 138085bb1d513464aa26f1430ebba013, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -2027929946800855010, guid: 138085bb1d513464aa26f1430ebba013, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -13317,7 +13317,8 @@ Transform:
   m_LocalPosition: {x: 887.30774, y: 335.08554, z: -9.888393}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1617601416}
   m_Father: {fileID: 2111287375}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1285074723
@@ -17097,12 +17098,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1617601413}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -887.30774, y: -335.08554, z: 19.888393}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1261263643}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1634718181
 GameObject:
@@ -21515,7 +21516,7 @@ MonoBehaviour:
   m_text: New Text
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 138085bb1d513464aa26f1430ebba013, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -2027929946800855010, guid: 138085bb1d513464aa26f1430ebba013, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -22661,4 +22662,3 @@ SceneRoots:
   - {fileID: 1383495217}
   - {fileID: 213076021}
   - {fileID: 2111287375}
-  - {fileID: 1617601416}
